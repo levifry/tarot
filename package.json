@@ -1,0 +1,35 @@
+{
+  "name": "tarot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest /test --coverage",
+    "run": "node index.js",
+    "start": "web-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/levifry/tarot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/levifry/tarot/issues"
+  },
+  "homepage": "https://github.com/levifry/tarot#readme",
+  "dependencies": {
+    "@babel/core": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "babel-jest": "^28.1.0",
+    "live-server": "^1.2.2",
+    "node-fetch": "^3.2.4",
+    "nodemon": "^2.0.16",
+    "webpack-dev-server": "^4.9.0"
+  },
+  "devDependencies": {
+    "@web/dev-server": "^0.1.31",
+    "webpack-cli": "^4.9.2"
+  }
+}
