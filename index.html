@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang='en'>
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="Cache-Control" content="no-store" />
+
+    <title>Tarot App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="style.css" as="style">
+    <link rel="stylesheet" type="text/css" href="style.css" media="print" onload="this.media='all'">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
+    <!-- <link rel="icon" href="favicon.png"> -->
+
+    <script type="module" src="./index.js" async></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        
+        //let's code!
+
+        console.log('end inline script execution');
+        
+      })
+    </script>
+
+  </head>
+
+  <body class="page">
+
+    <header class="page-block header">
+      card (DIV)<BR>
+        |- card-hover (DIV)<BR>
+        |- card-main (DIV)<BR>
+        |--- card-name (DIV)<BR>
+        |--- card-image (DIV)<BR>
+        |--- card-description (DIV)<BR>
+    </header>
+
+    <main class="page-block content">
+      <section id="flow_start" class="section">
+        Landing Page Skeleton
+        (id = flow_start)
+      </section><br>
+      <section id="flow_reading" class="section">
+        Reading Page
+        (id = flow_reading)<BR>
+
+        <div class="card"> 
+          <div class="card-hover">
+            Card Meaning [hover]
+          </div>
+          <div class="card-main">
+            <div class="card-name">
+            Card Name
+            </div>
+            <div class="card-image">
+            Card Image
+            </div>
+            <div class="card-description">
+            Card Description
+            </div>
+          </div>
+        </div>
+        <div class="card"> 
+          <div class="card-hover">
+            Card Meaning [hover]
+          </div>
+          <div class="card-main">
+            <div class="card-name">
+            Card Name
+            </div>
+            <div class="card-image reverse">
+            Card Image Reverse
+            </div>
+            <div class="card-description">
+            Card Description
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="page-block footer">
+
+    </footer>    
+
+  </body>
+
+</html>

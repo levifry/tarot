@@ -1,0 +1,65 @@
+:root {
+  --outer-margin: 16px;
+  --inner-margin: 16px;
+  --standard-padding: var(--outer-margin);
+  --half-padding: 8px;
+  --global-font: Poppins;
+  transition: all 0.5s ease;
+}
+
+html {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+body {
+  background-color: #050505;
+  color: #ffffff;
+  margin: 0px;
+}
+
+.page {
+  height: calc(100vh - var(--outer-margin) - var(--outer-margin));
+  display: grid;
+  grid-template-areas: "header1 header2 header3"
+                       "content1 content2 content3"
+                       "footer1 footer2 footer3";
+  grid-template-rows: 160px auto 400px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--inner-margin);
+  margin: var(--outer-margin);
+}
+
+.page-block {
+  background-color: #1d1d1d;
+  border: 1px solid #b35d5d;
+  padding: var(--standard-padding);
+}
+
+.card {
+  border: 1px solid #5db38c;
+}
+
+.header {
+  grid-column-start: header1;
+  grid-column-end:   header3;
+  grid-row: 1;
+  font-family: var(--global-font);
+  font-size: 12px;
+}
+
+.content {
+  grid-column-start: content1;
+  grid-column-end:   content3;
+  grid-row: 2;
+  font-family: var(--global-font);
+  font-size: 12px;
+}
+
+.footer {
+  grid-column-start: footer1;
+  grid-column-end:   footer3;
+  grid-row: 3;
+  font-family: var(--global-font);
+  font-size: 12px;
+}
