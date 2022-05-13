@@ -16,30 +16,39 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
 
-    <script type="module" src="./index.js" async></script>
+    <script type="module" src="./src/index.js" async></script>
 
   </head>
-
+ 
   <body class="page" oncontextmenu="return false">
 
-    <header class="header page-block">
+    <!-- <header class="header page-block">
       <div id="header-title">
         Past | Present | Future
+      </div>
+    </header> -->
+
+    <header class="header page-block">
+      <div id="spread-name">
+        placeholder
       </div>
     </header>
 
     <main class="content page-block">
       <section id="flow_start" class="flex-row">
-        <div class="discover">
-          Discover your destiny...
+        <div id="3-card-spread" class="start-button 3-card-spread">
+          Past | Present | Future
         </div>
-        <button id="btn" type="button">Reveal my Future</button>
-        Landing Page Skeleton
-        (id = flow_start)
+        <div class="start-button 3-card-spread">
+          Situation | Action | Outcome
+        </div>
+        <div id="4-card-spread" class="start-button">
+          Physical | Mental | Emotional | Spiritual State
+        </div>
       </section>
 
       <section id="flow_reading" class="flex-row wrap">
-        <span class="spacer"></span>
+        <!-- <span class="spacer"></span> -->
       </section>
 
     </main>
@@ -47,7 +56,7 @@
   </body>
 
   <footer class="footer page-block">
-    <div id="fooder-title">
+    <div id="footer-title">
     </div>
   </footer>
 

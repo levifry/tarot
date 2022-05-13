@@ -1,6 +1,9 @@
+import handleCursor from "./handleCursor";
 let count = 1;
+
 const displayCard = (card) => {
   let flipState = Math.round(Math.random());
+  
 
   let flowReading = document.getElementById('flow_reading');
   // append inside flowReading
@@ -47,34 +50,16 @@ const displayCard = (card) => {
   cardInnerDiv.appendChild(cardFrontDiv);
   cardInnerDiv.appendChild(cardBackDiv);
   cardDiv.appendChild(cardInnerDiv);
-  // cardDiv.classList.add('slide-in')
   
   flowReading.appendChild(cardDiv);
   
+  handleCursor(cardDiv, cardDescriptionDiv, card);
   
-  
-
-  cardDiv.addEventListener('mouseenter', function() {displayDesc(card.desc)});
-  cardDiv.addEventListener('mouseleave', function() {hideDesc()});
-  
-  setTimeout(function() {
-    cardDiv.classList.add('slide-in')
-  }, 500)
+  cardDiv.classList.add('slide-in')
   count++;
-}
+};
 
-const displayDesc = function(inputCardDesc) {
-  let cardDescriptionDiv = document.getElementById('card-description')
-  cardDescriptionDiv.style.display = 'flex';
-  cardDescriptionDiv.innerHTML = inputCardDesc;
-  // console.log(inputCardDesc);
-}
 
-const hideDesc = function() {
-  let cardDescriptionDiv = document.getElementById('card-description')
-  cardDescriptionDiv.style.display = 'none';
-  cardDescriptionDiv.innerHTML = '';
-  // console.log(inputCardDesc);
-}
+
 
 export default displayCard
