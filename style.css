@@ -1,65 +1,334 @@
 :root {
-  --outer-margin: 16px;
-  --inner-margin: 16px;
-  --standard-padding: var(--outer-margin);
-  --half-padding: 8px;
   --global-font: Poppins;
-  transition: all 0.5s ease;
+  --global-font-code: Azeret Mono;
+  --global-font-size: clamp(1rem, 1vw, 1rem);
+  --global-spacing: 16px;
+  --global-border-radius: 24px;
+  --global-padding: 8px;
+  --global-padding-full: 16px;
+  --font-heavy: 700;
+  --font-medium: 400;
+  --outer-margins: var(--global-spacing);
+  --inner-margins: var(--global-spacing);
+  --full-padding: var(--global-spacing);
+  --half-padding: calc(var(--global-spacing) / 2);
+  --quarter-padding: calc(var(--global-spacing) / 4);
 }
 
 html {
+  min-width: 320px;
   overflow-x: hidden;
   overflow-y: hidden;
 }
 
 body {
-  background-color: #050505;
+  min-width: 320px;
+  background-color: #000000;
   color: #ffffff;
   margin: 0px;
 }
 
 .page {
-  height: calc(100vh - var(--outer-margin) - var(--outer-margin));
+  height: calc(100vh - var(--outer-margins) - var(--outer-margins));
+  min-width: 320px;
   display: grid;
-  grid-template-areas: "header1 header2 header3"
-                       "content1 content2 content3"
-                       "footer1 footer2 footer3";
-  grid-template-rows: 160px auto 400px;
+  grid-template-areas: "header header-mid header-end"
+                       "content content-mid content-end"
+                       "footer footer-mid footer-end";
+  grid-template-rows: 48px calc(100% - 48px) 64px;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: var(--inner-margin);
-  margin: var(--outer-margin);
+  gap: 0;
+  margin: var(--outer-margins);
 }
 
 .page-block {
-  background-color: #1d1d1d;
-  border: 1px solid #b35d5d;
-  padding: var(--standard-padding);
-}
-
-.card {
-  border: 1px solid #5db38c;
+  background-color: #000000;
+  border-radius: var(--global-border-radius);
 }
 
 .header {
-  grid-column-start: header1;
-  grid-column-end:   header3;
-  grid-row: 1;
+  grid-column-start: header;
+  grid-column-end:   header-end;
+  grid-row: header;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   font-family: var(--global-font);
-  font-size: 12px;
+  height: 100%;
+  font-size: 1.4rem;
+}
+
+#header-title {
+  align-self: center;
+}
+
+#flow_start {
+  display: none;
+  height: 100%;
+  padding: var(--global-padding-full);
+  justify-content: center;
+  align-items: center;
+}
+
+#flow_reading {
+  height: 100%;
+  padding: 0;
+  justify-content: center;
+  overflow-y: scroll;
+}
+
+.spacer {
+  height: 16px;
+  width: 100%;
+}
+
+#flow_reading:last-child::after {
+  content: ' ';
+  width: 100%;
+  padding-top: 24px
+}
+
+#flow_reading::-webkit-scrollbar {
+  display: none;
 }
 
 .content {
-  grid-column-start: content1;
-  grid-column-end:   content3;
-  grid-row: 2;
+  grid-column-start: content;
+  grid-column-end:   content-end;
+  grid-row: content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   font-family: var(--global-font);
-  font-size: 12px;
+  font-size: var(--global-font-size);
+  place-content: stretch;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  flex-basis: content;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.card {
+  --card-size: 0.48;
+  --card-height: clamp(calc(400px * var(--card-size)), 32vw, calc(800px * var(--card-size)));
+  --card-width: calc(32px + var(--card-height) / 2);
+  --card-font-size-factor: 10rem;
+  --card-font-size: clamp(calc(var(--card-font-size-factor) / 16), 1.6vw, calc(var(--card-font-size-factor) / 8));
+  --card-font-size-small: clamp(0.5rem, 1vw, 0.9rem);
+  --card-font-family: MedievalSharp;
+  --card-border-radius: 16px;
+  height: var(--card-height);
+  width: var(--card-width);
+  position: relative;
+  margin: 16px;
+  perspective: 1000px;
+  transition: all 0.6s;
+  transform: translateY(-8200px);
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+}
+
+.card-inner {
+  position: relative;
+  height: var(--card-height);
+  width: var(--card-width);
+  border-radius: var(--card-border-radius);
+  transition: all 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(-180deg);
+}
+
+.card-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  text-align: center;
+  place-content: center;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: var(--card-border-radius);
+  padding: var(--full-padding);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  box-shadow: 0px 4px 36px -16px rgba(167, 167, 167, 0.6);
+}
+
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: var(--card-font-size);
+  background-color: rgb(0, 0, 0);
+  background-image: url("https://i.pinimg.com/564x/aa/40/71/aa407175d55ab0a1bcc20ed6233868d9.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  color: rgb(243, 210, 163);
+  text-shadow: 1px 1px #b28342a3;
+  border-radius: var(--card-border-radius);
+  padding: var(--full-padding);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: rotateY(-180deg);
+  box-shadow: 0px 4px 36px -16px rgba(255, 218, 176, 0.44);
+}
+
+.card-name {
+  padding: var(--quarter-padding);
+  font-size: var(--card-font-size);
+  font-family: var(--card-font-family);
+  font-weight: var(--font-heavy);
+}
+
+.card-image {
+  height: 100%;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+.reverse {
+  transform: rotate(180deg);
+}
+
+.card-image.reverse img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: rotate(180deg);
+}
+
+.card-meaning {
+  font-family: var(--card-font-family);
+  font-weight: var(--font-heavy);
+  font-size: var(--card-font-size-small);
+  padding: var(--full-padding);
+  max-height: 75%;
+  overflow: hidden;
+  align-self: center;
+  line-height: 1;
 }
 
 .footer {
-  grid-column-start: footer1;
-  grid-column-end:   footer3;
-  grid-row: 3;
+  grid-column-start: footer;
+  grid-column-end:   footer-end;
+  grid-row: footer;
   font-family: var(--global-font);
+  font-size: var(--global-font-size);
+  padding: var(--global-padding-full);
+  display: none;
+}
+
+#card-description {
+  padding: var(--global-padding-full);
+  margin: calc(var(--global-spacing) * 2);
+  font-size: 1rem;
+  font-family: var(--global-font);
+  font-weight: var(--font-medium);
+  position: fixed;
+  bottom: 0;
+  display: none;
+  justify-self: center;
+  text-align: justify;
+  height: fit-content;
+  border-radius: var(--global-border-radius);
+  background-color: #0f0b11e0;
+}
+
+.code {
+  padding: var(--global-padding);
+  justify-content: center;
+}
+
+.code-text {
+  font-family: 'Azeret Mono';
   font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+}
+
+.code-id {
+  color: rgb(242, 255, 141);
+}
+
+.code-class {
+  color: rgb(141, 202, 255);
+}
+
+.code-variable {
+  color: rgb(141, 255, 200);
+}
+
+.code-comment {
+  color: rgb(171, 255, 141);
+}
+
+.slide-in {
+	transition: all 2s ease;
+  animation: slide-in 3.4s ease both;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(-1200px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.hide {
+  animation: hide 2.0s ease both;
+  pointer-events:none;
+  /* display: none; */
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+#btn {
+  background-color: #9b42f5;
+  border-radius: var(--global-border-radius);
+  padding: var(--global-padding);
+  color: white;
+  font-family: var(--global-font);
 }

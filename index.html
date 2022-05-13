@@ -11,84 +11,87 @@
     <title>Tarot App</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="preload" href="style.css" as="style">
-    <link rel="stylesheet" type="text/css" href="style.css" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=MedievalSharp&family=Lora&family=Azeret+Mono&display=swap" rel="stylesheet">
+    <!-- <link rel="preload" href="style.css" as="style" onload="this.rel='stylesheet'"> -->
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
-    <!-- <link rel="icon" href="favicon.png"> -->
 
     <script type="module" src="./index.js" async></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        
-        //let's code!
-
-        console.log('end inline script execution');
-        
-      })
-    </script>
 
   </head>
 
-  <body class="page">
+  <body class="page" oncontextmenu="return false">
 
-    <header class="page-block header">
-      card (DIV)<BR>
-        |- card-hover (DIV)<BR>
-        |- card-main (DIV)<BR>
-        |--- card-name (DIV)<BR>
-        |--- card-image (DIV)<BR>
-        |--- card-description (DIV)<BR>
+    <header class="header page-block">
+      <div id="header-title">
+        Past | Present | Future
+      </div>
     </header>
 
-    <main class="page-block content">
-      <section id="flow_start" class="section">
+    <main class="content page-block">
+      <section id="flow_start" class="flex-row">
+        <div class="discover">
+          Discover your destiny...
+        </div>
+        <button id="btn" type="button">Reveal my Future</button>
         Landing Page Skeleton
         (id = flow_start)
-      </section><br>
-      <section id="flow_reading" class="section">
-        Reading Page
-        (id = flow_reading)<BR>
-
-        <div class="card"> 
-          <div class="card-hover">
-            Card Meaning [hover]
-          </div>
-          <div class="card-main">
-            <div class="card-name">
-            Card Name
-            </div>
-            <div class="card-image">
-            Card Image
-            </div>
-            <div class="card-description">
-            Card Description
-            </div>
-          </div>
-        </div>
-        <div class="card"> 
-          <div class="card-hover">
-            Card Meaning [hover]
-          </div>
-          <div class="card-main">
-            <div class="card-name">
-            Card Name
-            </div>
-            <div class="card-image reverse">
-            Card Image Reverse
-            </div>
-            <div class="card-description">
-            Card Description
-            </div>
-          </div>
-        </div>
       </section>
+
+      <section id="flow_reading" class="flex-row wrap">
+        <span class="spacer"></span>
+      </section>
+
     </main>
-
-    <footer class="page-block footer">
-
-    </footer>    
 
   </body>
 
-</html>
+  <footer class="footer page-block">
+    <div id="fooder-title">
+    </div>
+  </footer>
+
+  <div id="card-description">
+    Card Description
+  </div>
+
+  </html>
+
+
+
+
+<!-- <div class="card slide-in">
+  <div class="card-inner">
+    <div class="card-front">
+      <div class="card-image">
+        <img alt="Tarot Card" src="https://www.tarotcardmeanings.net/images/tarotcards-large/tarot-swords-05.jpg">
+      </div>
+      <div class="card-name">
+        Five of Swords
+      </div>
+    </div>
+    <div class="card-back">
+      <div class="card-meaning">
+        A card of many significances, and some of the readings cannot be harmonized. I set aside that which connects it with honour and good faith. The chief meaning is oppression simply, but it is also fortune, gain, any kind of success, and then it is the oppression of these things. It is also a card of false-seeming, disguise, perfidy. The place which the figure is approaching may suffer from the rods that he carries. Success is stultified if the Nine of Swords follows, and if it is a question of a lawsuit, there will be certain loss.
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin:14px;font-family:MedievalSharp;font-size:24px;font-weight:700;">
+    Past
+  </div>
+</div> -->
+
+<!-- <section id="code_scaffold" class="code code-text">
+  &lt;div id="<span class="code-id">flow_reading</span>"&gt; <span class="code-comment">// DOM element already in the page</span><br>
+    &emsp;&lt;div class="<span class="code-class">card</span>"&gt;&lt;/div&gt; <span class="code-comment">// populate this via JS</span><br>
+      &emsp;&emsp;&lt;div class="<span class="code-class">card-inner reverse</span>"&gt;&lt;/div&gt;<br>
+        &emsp;&emsp;&emsp;&lt;div class="<span class="code-class">card-front</span>"&gt;&lt;/div&gt;<br>
+          &emsp;&emsp;&emsp;&emsp;&lt;div class="<span class="code-class">card-name</span>"&gt;<span class="code-variable">Card Name</span>&lt;/div&gt;<br>
+          &emsp;&emsp;&emsp;&emsp;&lt;div class="<span class="code-class">card-image</span>"&gt;<span class="code-variable">img</span>&lt;/div&gt;<br>
+        &emsp;&emsp;&emsp;&lt;div class="<span class="code-class">card-back</span>"&gt;<span class="code-variable">Card Back</span>&lt;/div&gt;<br>
+          &emsp;&emsp;&emsp;&emsp;&lt;div class="<span class="code-class">card-meaning</span>"&gt;<span class="code-variable">Card Name</span>&lt;/div&gt;<br>
+  &lt;/div&gt;<br>
+  &lt;div id="<span class="code-id">footer</span>"&gt; <span class="code-comment">// DOM element already in the page</span><br>
+  &emsp;&lt;div id="<span class="code-id">card-description</span>"&gt;<span class="code-variable">Card Description</span>&lt;/div&gt; <span class="code-comment">// DOM element already in the page</span><br>
+  &lt;/div&gt;
+</section> -->
