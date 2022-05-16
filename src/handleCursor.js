@@ -54,4 +54,4 @@ const hideDesc = function() {
     cardDescriptionDiv.style.display = 'none';
     cardDescriptionDiv.innerHTML = '';
 }
-export default handleCursor
+export default handleCursor;

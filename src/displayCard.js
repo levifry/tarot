@@ -55,8 +55,8 @@ const displayCard = (card) => {
   
   handleCursor(cardDiv, cardDescriptionDiv, card);
   
-  cardDiv.classList.add('slide-in')
+  cardDiv.classList.add('slide-in');
   count++;
 };
 
-export default displayCard
+export default displayCard;
