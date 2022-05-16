@@ -289,7 +289,6 @@ body {
 
 .card-inner.hover {
   transform: rotateY(-4deg) rotateX(6deg) scale(1.2) translateY(4px) translateZ(80px);
-  /* transform: rotateY(-180deg) rotateX(0deg) scale(1.26) translateZ(80px); */
 }
 
 /* .card-inner:active {
@@ -354,7 +353,7 @@ body {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   transform: rotateY(-180deg);
-  box-shadow: 0px 4px 40px -20px rgba(255, 218, 176, 0.44);
+  box-shadow: 0px 4px 40px -20px rgba(0, 0, 0, 1);
 }
 
 .card-name {
