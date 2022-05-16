@@ -59,7 +59,4 @@ const displayCard = (card) => {
   count++;
 };
 
-
-
-
 export default displayCard
