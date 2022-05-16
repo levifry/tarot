@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">23.72% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>14/56</span>
+                <span class='fraction'>14/59</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">23.72% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14/56</span>
+                <span class='fraction'>14/59</span>
             </div>
         
             
@@ -189,14 +189,18 @@
 <a name='L124'></a><a href='#L124'>124</a>
 <a name='L125'></a><a href='#L125'>125</a>
 <a name='L126'></a><a href='#L126'>126</a>
-<a name='L127'></a><a href='#L127'>127</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -206,9 +210,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -240,6 +244,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -360,15 +368,19 @@ const handleCursor = (cardDiv, cardDescriptionDiv, card) =&gt; {
     //   displayDesc(card.desc);
     // }
 <span class="cstat-no" title="statement not covered" >    currentCardClass = cardDiv.classList[1];</span>
-<span class="cstat-no" title="statement not covered" >    currentCard = document.getElementsByClassName(currentCardClass)[0]; </span>
-<span class="cstat-no" title="statement not covered" >    if (!cardDiv.classList.contains('active', 'hover', 'hover-z')) {</span>
+<span class="cstat-no" title="statement not covered" >    currentCard = document.getElementsByClassName(currentCardClass)[0];</span>
+<span class="cstat-no" title="statement not covered" >    if (!currentCard.classList.contains('hover')) {</span>
+<span class="cstat-no" title="statement not covered" >      console.log('first condition',currentCard.classList);</span>
 <span class="cstat-no" title="statement not covered" >      touched = true;</span>
 <span class="cstat-no" title="statement not covered" >      hoveredCard = true;</span>
 <span class="cstat-no" title="statement not covered" >      currentCard.classList.add('hover-z', 'hover');</span>
-    } else <span class="cstat-no" title="statement not covered" >if (cardDiv.classList.contains('hover', 'hover-z')) {</span>
+    } else <span class="cstat-no" title="statement not covered" >if (currentCard.classList.contains('hover', 'hover-z') &amp;&amp; !(currentCard.classList.contains('active'))) {</span>
+<span class="cstat-no" title="statement not covered" >      console.log('second condition',currentCard.classList);</span>
 <span class="cstat-no" title="statement not covered" >      currentCard.classList.add('active');</span>
-    } else <span class="cstat-no" title="statement not covered" >if (cardDiv.classList.contains('active', 'hover', 'hover-z')) {</span>
+    } else {
+<span class="cstat-no" title="statement not covered" >      console.log('else condition',currentCard.classList);</span>
 <span class="cstat-no" title="statement not covered" >      hoveredCard = false;</span>
+<span class="cstat-no" title="statement not covered" >      touched = false;</span>
 <span class="cstat-no" title="statement not covered" >      currentCard.classList.remove('active', 'hover', 'hover-z')</span>
     }
 &nbsp;
@@ -448,7 +460,7 @@ export default handleCursor;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Mon May 16 2022 12:30:42 GMT-0700 (Pacific Daylight Time)
+                at Mon May 16 2022 12:55:27 GMT-0700 (Pacific Daylight Time)
             </div>
         <script src="../prettify.js"></script>
         <script>
