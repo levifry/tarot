@@ -10,7 +10,7 @@ const handleCursor = (cardDiv, cardDescriptionDiv, card) => {
     currentCard = document.getElementsByClassName(currentCardClass)[0]; 
     currentCard.classList.add('hover-z');
     currentCard.children[0].classList.add('hover');
-    displayDesc(card.desc)
+    displayDesc(card.desc);
   });
 
   cardDiv.addEventListener('mouseleave', function() {
@@ -44,13 +44,13 @@ const removeHover = (time) => {
 }
 
 const displayDesc = function(inputCardDesc) {
-  let cardDescriptionDiv = document.getElementById('card-description')
+  let cardDescriptionDiv = document.getElementById('card-description');
   cardDescriptionDiv.style.display = 'flex';
   cardDescriptionDiv.innerHTML = inputCardDesc;
 }
 
 const hideDesc = function() {
-  let cardDescriptionDiv = document.getElementById('card-description')
+  let cardDescriptionDiv = document.getElementById('card-description');
     cardDescriptionDiv.style.display = 'none';
     cardDescriptionDiv.innerHTML = '';
 }

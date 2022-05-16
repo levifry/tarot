@@ -1,4 +1,4 @@
-import allCards from './util/allCards.js'
+import allCards from './util/allCards.js';
 
 const getCards = (numberCards) => {
   return fetch(`https://rws-cards-api.herokuapp.com/api/v1/cards/random?n=${numberCards}`)
@@ -7,7 +7,7 @@ const getCards = (numberCards) => {
     data.cards.forEach(card => {
       let check = allCards[card.name_short];
       card.img = check;
-    })
+    });
     return data.cards;
 
   });

@@ -77,5 +77,5 @@ const allCards = {
   sw08: "https://www.tarotcardmeanings.net/images/tarotcards-large/tarot-swords-08.jpg",
   sw09: "https://www.tarotcardmeanings.net/images/tarotcards-large/tarot-swords-09.jpg",
   sw10: "https://www.tarotcardmeanings.net/images/tarotcards-large/tarot-swords-10.jpg"
-}
-export default allCards
+};
+export default allCards;

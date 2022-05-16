@@ -1,5 +1,5 @@
-import displayCard from "../displayCard";
-import cardObjArr from "./mocks/cardObjArr"
+import displayCard from "../src/displayCard.js";
+import cardObjArr from "./mocks/cardObjArr.js"
 
 
 beforeAll(() => {
@@ -21,7 +21,6 @@ describe('displayCard tests', () => {
     expect(document.getElementsByClassName('card').length).toBe(3);
   })
   test('displayCard should have the correct div format for each card', () => {
-
     expect(document.getElementsByClassName('card')[0].innerHTML).toEqual('<div class="card-inner reverse"><div class="card-front"><div class="card-image"><img src="https://www.tarotcardmeanings.net/images/tarotcards-large/tarot-fool.jpg"></div><div class="card-name">The Fool</div></div><div class="card-back"><div class="card-meaning">Negligence, absence, distribution, carelessness, apathy, nullity, vanity.</div></div></div>')
 
   })

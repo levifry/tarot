@@ -9,7 +9,7 @@ const displayCard = (card) => {
   // append inside flowReading
   let cardDiv = document.createElement('div');
   cardDiv.className = 'card';
-  cardDiv.classList.add(`card${count}`)
+  cardDiv.classList.add(`card${count}`);
   
   //// append inside card div;
   let cardInnerDiv = document.createElement('div');
@@ -29,7 +29,7 @@ const displayCard = (card) => {
   let cardMeaningDiv = document.createElement('div');
   cardMeaningDiv.className = 'card-meaning';
 
-  let cardDescriptionDiv = document.getElementById('card-description')
+  let cardDescriptionDiv = document.getElementById('card-description');
 
   let cardImg = document.createElement('img');
   cardImg.src = card.img;

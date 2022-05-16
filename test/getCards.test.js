@@ -1,5 +1,5 @@
-import getCards from "../getCards";
-import fetch from "./mocks/fetch"
+import getCards from "../src/getCards.js";
+import fetch from "./mocks/fetch.js"
 
 
 describe('getCards Test', () => {
