@@ -3,7 +3,6 @@ let count = 1;
 
 const displayCard = (card) => {
   let flipState = Math.round(Math.random());
-  
 
   let flowReading = document.getElementById('flow_reading');
   // append inside flowReading

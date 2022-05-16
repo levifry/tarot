@@ -35,7 +35,14 @@
 
     <main class="content page-block">
       <section id="flow_start" class="flex-row">
-        <div id="3-card-spread" class="start-button 3-card-spread">
+        <div id="logo" class="3-card-spread">
+          <img src="favicon.png" height="128px" width="128px">
+          <p>Past | Present | Future</p>
+        </div>
+        <div id="welcome">
+          <p>SoTarot</p>
+        </div>
+        <div class="start-button 3-card-spread">
           Past | Present | Future
         </div>
         <div class="start-button 3-card-spread">
@@ -68,11 +75,32 @@
     </div>
   </div>
 
-
-</html>
-
-
-
+<script>
+  document.addEventListener("keydown", function(event) {
+    const console = document.getElementById('code_scaffold');
+      if (event.key === "c") {
+        if (console.style.display !== 'none') {
+          console.style.display = 'none';
+        } else {
+          console.style.display = 'block';
+        }
+      }
+  });
+</script>
+<section id="code_scaffold" class="code code-text" style="display:none;">
+  &lt;div id="<span class="code-id">flow_reading</span>"&gt; <span class="code-comment">// flow state which reveals cards</span><br>
+    &emsp;&lt;div class="<span class="code-class">card</span>"&gt;&lt;/div&gt; <span class="code-comment">// card element</span><br>
+      &emsp;&emsp;&lt;div class="<span class="code-class">card-inner reverse hover active</span>"&gt;&lt;/div&gt;<br>
+        &emsp;&emsp;&emsp;&lt;div class="<span class="code-class">card-front</span>"&gt;&lt;/div&gt;<br>
+          &emsp;&emsp;&emsp;&emsp;&lt;div class="<span class="code-class">card-name</span>"&gt;<span class="code-variable">Card Name</span>&lt;/div&gt;<br>
+          &emsp;&emsp;&emsp;&emsp;&lt;div class="<span class="code-class">card-image</span>"&gt;<span class="code-variable">img</span>&lt;/div&gt;<br>
+        &emsp;&emsp;&emsp;&lt;div class="<span class="code-class">card-back</span>"&gt;<span class="code-variable">Card Back</span>&lt;/div&gt;<br>
+          &emsp;&emsp;&emsp;&emsp;&lt;div class="<span class="code-class">card-meaning</span>"&gt;<span class="code-variable">Card Name</span>&lt;/div&gt;<br>
+  &lt;/div&gt;<br>
+  &lt;div id="<span class="code-id">footer</span>"&gt; <span class="code-comment">// DOM element already in the page</span><br>
+  &emsp;&lt;div id="<span class="code-id">card-description</span>"&gt;<span class="code-variable">Card Description</span>&lt;/div&gt; <span class="code-comment">// DOM element already in the page</span><br>
+  &lt;/div&gt;
+</section>
 
 <!-- <div class="card slide-in">
   <div class="card-inner">
@@ -95,17 +123,4 @@
   </div>
 </div> -->
 
-<!-- <section id="code_scaffold" class="code code-text">
-  &lt;div id="<span class="code-id">flow_reading</span>"&gt; <span class="code-comment">// DOM element already in the page</span><br>
-    &emsp;&lt;div class="<span class="code-class">card</span>"&gt;&lt;/div&gt; <span class="code-comment">// populate this via JS</span><br>
-      &emsp;&emsp;&lt;div class="<span class="code-class">card-inner reverse</span>"&gt;&lt;/div&gt;<br>
-        &emsp;&emsp;&emsp;&lt;div class="<span class="code-class">card-front</span>"&gt;&lt;/div&gt;<br>
-          &emsp;&emsp;&emsp;&emsp;&lt;div class="<span class="code-class">card-name</span>"&gt;<span class="code-variable">Card Name</span>&lt;/div&gt;<br>
-          &emsp;&emsp;&emsp;&emsp;&lt;div class="<span class="code-class">card-image</span>"&gt;<span class="code-variable">img</span>&lt;/div&gt;<br>
-        &emsp;&emsp;&emsp;&lt;div class="<span class="code-class">card-back</span>"&gt;<span class="code-variable">Card Back</span>&lt;/div&gt;<br>
-          &emsp;&emsp;&emsp;&emsp;&lt;div class="<span class="code-class">card-meaning</span>"&gt;<span class="code-variable">Card Name</span>&lt;/div&gt;<br>
-  &lt;/div&gt;<br>
-  &lt;div id="<span class="code-id">footer</span>"&gt; <span class="code-comment">// DOM element already in the page</span><br>
-  &emsp;&lt;div id="<span class="code-id">card-description</span>"&gt;<span class="code-variable">Card Description</span>&lt;/div&gt; <span class="code-comment">// DOM element already in the page</span><br>
-  &lt;/div&gt;
-</section> -->
+</html>
