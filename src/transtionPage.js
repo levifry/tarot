@@ -1,5 +1,5 @@
-import getCards from './getCards'
-import displayCard from './displayCard'
+import getCards from './getCards.js'
+import displayCard from './displayCard.js'
 
 const transitionPage = async (amount, title)  => {
   document.getElementById('spread-name').innerHTML  = title

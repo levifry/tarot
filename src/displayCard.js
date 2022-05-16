@@ -1,4 +1,4 @@
-import handleCursor from "./handleCursor";
+import handleCursor from "./handleCursor.js";
 let count = 1;
 
 const displayCard = (card) => {

@@ -1,4 +1,4 @@
-import transitionPage from './transtionPage'
+import transitionPage from './transtionPage.js'
 
 const removeAllCards = (parent) => {
   while (parent.firstChild) {
