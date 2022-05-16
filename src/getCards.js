@@ -1,4 +1,4 @@
-import allCards from './util/allCards.json' assert{ type: 'json' };
+import allCards from './util/allCards.js'
 
 const getCards = (numberCards) => {
   return fetch(`https://rws-cards-api.herokuapp.com/api/v1/cards/random?n=${numberCards}`)
